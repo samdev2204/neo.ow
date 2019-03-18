@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<!--
+ ___     __     __ __ ___     __ ___ __
+|    \  |  |   |   __ ___|   |   ___   |
+|     \ |  |   |  |__ ___    |  |   |  |
+|  |\  \|  |   |   __ ___|   |  |   |  |
+|  | \     |   |  |__ ___    |  |___|  |
+|__|  \ ___|   |__ __ ___|   |__ ___ __|
+
+https://neo.org/
+
+Want to make this site better?
+https://github.com/neo-project/neo.org
+-->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="robots" content="index,follow">
+    <meta name="description" content='NEO is a non-profit community-based blockchain project that utilizes blockchain technology and digital identity to digitize assets, to automate the management of digital assets using smart contracts, and to realize a "smart economy" with a distributed network.'>
+    <meta name="author" content="neo-project">
+    <meta name="application-name" content="neo.org">
+    <meta name="renderer" content="ie-stand">
+        <meta name="keywords" content="NEO,Blockchain,智能经济,antshares,小蚁,区块链">
+
+        <title>Consensus Nodes - NEO Smart Economy</title>
+        <meta name="twitter:title" content="Consensus Nodes - NEO Smart Economy" />
+            <meta name="twitter:description" content="NEO Smart Economy" />
+            <meta name="twitter:image" content="https://neo-cdn.azureedge.net/images/twitter-img.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link type="image/x-icon" href="https://neo-cdn.azureedge.net/images/favicon.png" rel="apple-touch-icon">
+    <link type="image/x-icon" href="https://neo-cdn.azureedge.net/images/favicon.png" rel="shortcut icon">
+    <link type="image/x-icon" href="https://neo-cdn.azureedge.net/images/favicon.png" rel="icon">
+    <link type="image/x-icon" href="https://neo-cdn.azureedge.net/images/favicon.png" rel="bookmark" />
+
+    
+    
+        <link href="https://neo-cdn.azureedge.net/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://neo-cdn.azureedge.net/css/site.min.css?v=4A55E25B98D2500A1DFB1866B26B4B83E504E1516C6B3F35B041B99795763A05" rel="stylesheet" />
+        <script type="text/javascript">
+	
+    var appInsights=window.appInsights||function(a){
+        function b(a){c[a]=function(){var b=arguments;c.queue.push(function(){c[a].apply(c,b)})}}var c={config:a},d=document,e=window;setTimeout(function(){var b=d.createElement("script");b.src=a.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js",d.getElementsByTagName("script")[0].parentNode.appendChild(b)});try{c.cookie=d.cookie}catch(a){}c.queue=[];for(var f=["Event","Exception","Metric","PageView","Trace","Dependency"];f.length;)b("track"+f.pop());if(b("setAuthenticatedUserContext"),b("clearAuthenticatedUserContext"),b("startTrackEvent"),b("stopTrackEvent"),b("startTrackPage"),b("stopTrackPage"),b("flush"),!a.disableExceptionTracking){f="onerror",b("_"+f);var g=e[f];e[f]=function(a,b,d,e,h){var i=g&&g(a,b,d,e,h);return!0!==i&&c["_"+f](a,b,d,e,h),i}}return c
+    }({
+        instrumentationKey: '7be11cee-ae04-4609-a90b-36b6a288a1c6'
+    });
+
+    window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&appInsights.trackPageView();
+	
+    </script>
+    
+    
+    
+    
+        <link rel="stylesheet" href="https://neo-cdn.azureedge.net/css/consensus.min.css?v=0D2B25E60723920BAB1A87F80E60252EF3BE66E2B25DBC4B1B3ED83475F0B052" />
+    
+    <link rel="stylesheet" href="https://neo-cdn.azureedge.net/lib/bootstrap-fileinput/css/fileinput.css" />
+
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container">
+            <div id="nav_container">
+                <a class="navbar-brand" href="/">
+                    <img src="https://neo-cdn.azureedge.net/images/neo_logo.svg" />
+                </a>
+                <div class="collapse navbar-collapse" id="neoNnavbarToggler">
+                    <ul id="menu_list" class="navbar-nav top-nav ml-auto">
+                        <li class="nav-item"><a href="/">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" onclick="window.location = '/dev'" href="/dev">
+                                Developer
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item t4" href="/testcoin/apply">Apply Testnet NEO/GAS</a>
+                                <a class="dropdown-item t4" href="http://docs.neo.org" target="_blank">Technical Documents <i class="iconfont">&#xe6f4;</i></a>
+                                <a class="dropdown-item t4" href="https://github.com/neo-project" target="_blank">GitHub <i class="iconfont">&#xe6f4;</i></a>
+                                <a class="dropdown-item t4" href="/dev/bounty">Security Bounty</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="/client">Client</a></li>
+                        <li class="nav-item"><a href="/blog">Blog</a></li>
+                        <li class="nav-item"><a href="/event">Event</a></li>
+                        <li class="nav-item"><a href="/consensus">Consensus Nodes</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                                More
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item t4" href="http://ndapp.org" target="_blank">DAPPS <i class="iconfont">&#xe6f4;</i></a>
+                                <a class="dropdown-item t4" href="/team">NEO Contributors</a>
+                                <a class="dropdown-item t4" href="/logo">Download Logo</a>
+                            </div>
+                        </li>
+                        <li class="nav-item nav-lang">
+                            <a href="javascript:" onclick="setLanguage('en-us')">EN</a>/<a href="javascript:" onclick="setLanguage('zh-cn')">中文</a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#neoNnavbarToggler" aria-controls="neoNnavbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon iconfont">&#xe629;</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container layout-container">
+        
+
+
+<div class="title-line h3 m1">Blockchain Info</div>
+<div class="row block-info m2">
+    <div class="info-cont">
+        <p class="info-icon gray-text"><i class="iconfont">&#xe619;</i></p>
+        <p class="t3">Block Height</p>
+        <span class="t2" id="blohei">--</span>
+    </div>
+    <div class="info-cont">
+        <p class="info-icon gray-text"><i class="iconfont">&#xe6c1;</i></p>
+        <p class="t3">Last Time</p>
+        <span class="t2" id="lastime">--</span>
+    </div>
+    <div class="info-cont">
+        <p class="info-icon gray-text"><i class="iconfont">&#xe61c;</i></p>
+        <p class="t3">Candidate Count</p>
+        <span class="t2" id="cannum">--</span>
+    </div>
+    <div class="info-cont">
+        <p class="info-icon gray-text"><i class="iconfont">&#xe609;</i></p>
+        <p class="t3">Consensus Count</p>
+        <span class="t2" id="connum">--</span>
+    </div>
+</div>
+<div class="title-line h3 m1">Blockchain indicator</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="block-data border-static m2">
+            <div class="can-charts" id="main"></div>
+        </div>
+    </div>
+</div>
+<div class="title-line h3 m1">
+    On-Chain & Off-Chain Governance
+</div>
+<div class="gray-back p2 text-center border-static m2 p1">
+    <p class="t4 w800 m3">
+        Off-chain governance relies on the continued support from NEO Foundation. Candidates establish a strategic partnership with the NEO Foundation and receive votes from the Foundation.<br />On-chain governance relies on the mechanisms of the NEO blockchain itself. Candidates become a consensus node through the votes of NEO holders and maintain it independently.<br />
+    </p>
+    <p class="t4 w800 m3">
+        For more details, see the documentation:<a class="green-text" href="https://neo-ngd.github.io/reference/How-To-Become-NEO-Consensus-Node.html"> How To Become A Consensus Node</a>
+    </p>
+    <a class="btn-static btn5 m3" href="mailto:consensus@neo.org">Apply</a>
+</div>
+<div class="title-line h3 m1">
+    Node List
+</div>
+<div class="flo-clear m3">
+    <a class="btn-static btn3 float-right d-none d-xl-block" data-toggle="modal" data-target="#exampleModal">Provide Candidate Info</a>
+</div>
+<div class="row">
+    <ul class="col-sm-12 table-list m3" id="tableList"></ul>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Candidate Info</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form enctype="multipart/form-data" action="/consensus" method="post">
+                    
+                    
+                    <div class="form-group">
+                        <label for="PublicKey" class="control-label">Public Key<span class="red-text"> * </span></label>
+                        <select class="form-control" data-val="true" data-val-regex="The field PublicKey must match the regular expression &#x27;0[0-9a-f]{65}&#x27;." data-val-regex-pattern="0[0-9a-f]{65}" data-val-required="The PublicKey field is required." id="PublicKey" name="PublicKey">
+                                <option value="024c7b7fb6c310fccf1ba33b082519d82964ea93868d676662d4a59ad548df0e7d">024c7b7fb6c310fccf1ba33b082519d82964ea93868d676662d4a59ad548df0e7d</option>
+                                <option value="025bdf3f181f53e9696227843950deb72dcd374ded17c057159513c3d0abe20b64">025bdf3f181f53e9696227843950deb72dcd374ded17c057159513c3d0abe20b64</option>
+                                <option value="02ca0e27697b9c248f6f16e085fd0061e26f44da85b58ee835c110caa5ec3ba554">02ca0e27697b9c248f6f16e085fd0061e26f44da85b58ee835c110caa5ec3ba554</option>
+                                <option value="02df48f60e8f3e01c48ff40b9b7f1310d7a8b2a193188befe1c2e3df740e895093">02df48f60e8f3e01c48ff40b9b7f1310d7a8b2a193188befe1c2e3df740e895093</option>
+                                <option value="035e819642a8915a2572f972ddbdbe3042ae6437349295edce9bdc3b8884bbf9a3">035e819642a8915a2572f972ddbdbe3042ae6437349295edce9bdc3b8884bbf9a3</option>
+                                <option value="03b209fd4f53a7170ea4444e0cb0a6bb6a53c2bd016926989cf85f9b0fba17a70c">03b209fd4f53a7170ea4444e0cb0a6bb6a53c2bd016926989cf85f9b0fba17a70c</option>
+                                <option value="03b8d9d5771d8f513aa0869b9cc8d50986403b78c6da36890638c3d46a5adce04a">03b8d9d5771d8f513aa0869b9cc8d50986403b78c6da36890638c3d46a5adce04a</option>
+                                <option value="02486fd15702c4490a26703112a5cc1d0923fd697a33406bd5a1c00e0013b09a70">02486fd15702c4490a26703112a5cc1d0923fd697a33406bd5a1c00e0013b09a70</option>
+                                <option value="02aaec38470f6aad0042c6e877cfd8087d2676b0f516fddd362801b9bd3936399e">02aaec38470f6aad0042c6e877cfd8087d2676b0f516fddd362801b9bd3936399e</option>
+                                <option value="03090384ee874e3b71a97fa7a0f2d523bb211f60078e51d014b367f1d91bc4a9e1">03090384ee874e3b71a97fa7a0f2d523bb211f60078e51d014b367f1d91bc4a9e1</option>
+                                <option value="032f7b887a43774c51927e44d4c471655cdf6257ad92e38c1cf50c67e1a10281b4">032f7b887a43774c51927e44d4c471655cdf6257ad92e38c1cf50c67e1a10281b4</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 form-group">
+                            <label class="control-label" for="Organization">Organization<span class="red-text"> * </span></label>
+                            <input class="form-control" data-val="true" data-val-required="This field is required" data-val-regex="Please enter the correct website format" type="text" data-val-maxlength="The field Organization must be a string or array type with a maximum length of &#x27;50&#x27;." data-val-maxlength-max="50" id="Organization" maxlength="50" name="Organization" value="" />
+                            <small class="form-text text-muted">Relevant information about NEO should be displayed.</small>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="Organization" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col-6 form-group">
+                            <label class="control-label" for="Logo">Logo</label>
+                            <input type="hidden" name="oldLogo" id="Logo" value="" />
+                            <input type="file" name="logo" id="logo" class="form-control" data-show-preview="false" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 form-group">
+                            <label class="control-label" for="Website">Website<span class="red-text"> * </span></label>
+                            <input class="form-control" data-val="true" data-val-required="This field is required" data-val-regex="Please enter the correct website format" type="text" data-val-maxlength="The field Website must be a string or array type with a maximum length of &#x27;50&#x27;." data-val-maxlength-max="50" data-val-regex-pattern="^(?=^.{3,255}$)(http(s)?:\/\/)?(www\.)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})&#x2B;(:\d&#x2B;)*(\/\w&#x2B;\.\w&#x2B;)*$" id="Website" maxlength="50" name="Website" value="" />
+                            <small class="form-text text-muted">Relevant information about NEO should be displayed.</small>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="Website" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="col-6 form-group">
+                            <label class="control-label" for="Email">E-mail<span class="red-text"> * </span></label>
+                            <input class="form-control" data-val="true" data-val-required="This field is required" data-val-regex="Please enter the correct E-mail format" type="email" data-val-email="The Email field is not a valid e-mail address." id="Email" name="Email" value="" />
+                            <span class="text-danger field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="SocialAccount">Social media account</label>
+                        <input placeholder="Twitter:neo_blockchain;Facebook:NEOSmartEcon;" class="form-control" type="text" data-val="true" data-val-maxlength="The field SocialAccount must be a string or array type with a maximum length of &#x27;200&#x27;." data-val-maxlength-max="200" id="SocialAccount" maxlength="200" name="SocialAccount" value="" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="SocialAccount" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="Summary">Summary</label>
+                        <textarea class="form-control" data-val="true" data-val-maxlength="The field Summary must be a string or array type with a maximum length of &#x27;500&#x27;." data-val-maxlength-max="500" id="Summary" maxlength="500" name="Summary">
+</textarea>
+                        <small class="form-text text-muted">Brief introduction about team</small>
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Summary" data-valmsg-replace="true"></span>
+                    </div>
+                    <hr class="m3" />
+                    <div class="form-group">
+                        <label class="control-label">Hash</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-outline-secondary" type="button" onclick="hashInfo()">Generate Hash</button>
+                            </div>
+                            <input id="hash" type="text" readonly="readonly" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signature" class="control-label">Signature</label>
+                        <input name="signature" id="signature" class="form-control" data-val="true" data-val-required="This field is required" />
+                        <small class="form-text text-muted">Please sign the above hash with your private key.</small>
+                        <span data-valmsg-for="signature" class="text-danger"></span>
+                        <span class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btn-light float-right" />
+                    </div>
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FkQK6Dh55dFlsNBEGB5N0pD5_KWyTRQvwnsGjX-fVyQzUiOxr2Bg3flLvpJjMqgJQScHdIeL7T9hu3MFi5SeXANGNAOHNSgiwUlyaEN_JetVZh3GcomVxziXKA52PjSaOZqqhNHBxTcnb9zMMzTnd8" /></form>
+            </div>
+        </div>
+    </div>
+</div>
+<script id="test" type="text/html">
+    <li class="pt0 pr0 border-static">
+        <div class="can-th p4">
+            {{if Active}}<span class="detail-left t3 bold-font green-text">Consensus Node</span>{{/if}}
+            {{if !Active}}<span class="detail-left t4">Candidate Node</span>{{/if}}
+            <div class="detail-right">
+                <span class="can-votes">Votes: {{Votes}}</span>
+                <span class="pub-key ">Public Key: <span class="text-ellipsis">{{PublicKey}}</span></span>
+            </div>
+        </div>
+        {{if Info}}
+        <div class="can-detail p4">
+            <div class="detail-left" style="background-image:url({{Info.Logo}})">
+                {{if Info.Logo}}<div style="padding-top:100%"></div>{{/if}}
+            </div>
+            <div class="detail-right">
+                <p class="green-text t2 pt0">{{if Info.Organization}}{{Info.Organization}}{{/if}}</p>
+                {{if Info.Website}}<span>Website: </span><a href={{Info.Website}} target="_blank">{{Info.Website}}</a><br>{{/if}}
+                {{if Info.Email}}<span>E-mail: </span>{{Info.Email}}<br>{{/if}}
+
+                {{if Info.Summary}}<span>Summary: </span>{{Info.Summary}}<br>{{/if}}
+            </div>
+        </div>
+        {{/if}}
+</script>
+
+
+    </div>
+    <footer>
+        <div class="main-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 footer-logo m1 lh3 t4">
+                        <img src="https://neo-cdn.azureedge.net/images/neo_logo.svg">
+                        <p class="m4 mb0">Contact: <a class="gray-text" href="mailto:contact@neo.org">contact@neo.org</a></p>
+                        <p class="mb0">Marketing: <a class="gray-text" href="mailto:marketing@neo.org">marketing@neo.org</a></p>
+                    </div>
+                    <div class="col-md-7 m1">
+                        <ul class="footer-link t2">
+                            <li><a target="_blank" href="https://github.com/neo-project"><i class="iconfont">&#xe6ed;</i></a></li>
+                            <li><a target="_blank" href="https://twitter.com/neo_blockchain"><i class="iconfont">&#xe601;</i></a></li>
+                            <li><a target="_blank" href="https://discord.io/neo"><i class="iconfont">&#xe71d;</i></a></li>
+                            <li><a target="_blank" href="https://www.reddit.com/r/NEO/"><i class="iconfont">&#xe7d9;</i></a></li>
+                            <li><a target="_blank" href="https://medium.com/neo-smart-economy"><i class="iconfont">&#xe7e8;</i></a></li>
+                            <li><a target="_blank" href="https://www.youtube.com/channel/UCl1AwEDN0w5lTmfJEMsY5Vw/videos"><i class="iconfont">&#xe612;</i></a></li>
+                            <li><a target="_blank" href="https://www.facebook.com/NEOSmartEcon/"><i class="iconfont">&#xe681;</i></a></li>
+                            <li><a target="_blank" href="https://t.me/NEO_EN"><i class="iconfont">&#xe731;</i></a></li>
+                            <li class="pop-up">
+                                <a href="javascript:void(0);"><i class="iconfont">&#xe638;</i></a>
+                                <div class="pop-hide">
+                                    <img src="https://neo-cdn.azureedge.net/images/qrcode.png" width="120" height="120" />
+                                </div>
+                            </li>
+                            <li><a target="_blank" href="https://weibo.com/neosmarteconomy"><i class="iconfont">&#xe64a;</i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row copyright">
+                    <div class="col-sm-12 m1 t5 light-text">
+                        <p>Copyright © NEO Team 2014-2019 &nbsp;&nbsp;<a class="light-text" href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank">沪ICP备15040337号</a> <a class="light-text" href="/map">Site Map</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <form id="form_language" method="post" action="/home/setlanguage">
+        
+        <p>
+            <input type="hidden" id="culture" name="culture" />
+            <input type="hidden" id="returnUrl" name="returnUrl" />
+        </p>
+        <script>
+            function setLanguage(culture) {
+                $("#culture").val(culture);
+                $("#returnUrl").val(window.location.pathname);
+                $("#form_language").submit();
+            }
+        </script>
+    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FkQK6Dh55dFlsNBEGB5N0pD5_KWyTRQvwnsGjX-fVyQzUiOxr2Bg3flLvpJjMqgJQScHdIeL7T9hu3MFi5SeXANGNAOHNSgiwUlyaEN_JetVZh3GcomVxziXKA52PjSaOZqqhNHBxTcnb9zMMzTnd8" /></form>
+    <script src="https://neo-cdn.azureedge.net/lib/jquery/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://neo-cdn.azureedge.net/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $(".dropdown-toggle").hover(function () {
+            $(this).next(".dropdown-menu").toggle();
+        })
+
+        $('.dropdown-menu').hover(function () {
+            $(this).toggle();
+        });
+
+    </script>
+
+    
+    
+        <script src="https://neo-cdn.azureedge.net/js/site.min.js?v=6F3E0A6283A494DDB4E5817F31D6AF74FCAD431F69FD8EBC8F70D329B134CEE5"></script>
+        <script type="text/javascript">
+	
+    var appInsights=window.appInsights||function(a){
+        function b(a){c[a]=function(){var b=arguments;c.queue.push(function(){c[a].apply(c,b)})}}var c={config:a},d=document,e=window;setTimeout(function(){var b=d.createElement("script");b.src=a.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js",d.getElementsByTagName("script")[0].parentNode.appendChild(b)});try{c.cookie=d.cookie}catch(a){}c.queue=[];for(var f=["Event","Exception","Metric","PageView","Trace","Dependency"];f.length;)b("track"+f.pop());if(b("setAuthenticatedUserContext"),b("clearAuthenticatedUserContext"),b("startTrackEvent"),b("stopTrackEvent"),b("startTrackPage"),b("stopTrackPage"),b("flush"),!a.disableExceptionTracking){f="onerror",b("_"+f);var g=e[f];e[f]=function(a,b,d,e,h){var i=g&&g(a,b,d,e,h);return!0!==i&&c["_"+f](a,b,d,e,h),i}}return c
+    }({
+        instrumentationKey: '7be11cee-ae04-4609-a90b-36b6a288a1c6'
+    });
+
+    window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&appInsights.trackPageView();
+	
+    </script>
+    
+
+    
+<script src="https://neo-cdn.azureedge.net/lib/jquery-validate/jquery.validate.min.js"></script>
+<script src="https://neo-cdn.azureedge.net/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    
+    
+        <script src="https://neo-cdn.azureedge.net/js/echarts.js"></script>
+        <script src="https://neo-cdn.azureedge.net/js/template.js"></script>
+        <script src="https://neo-cdn.azureedge.net/js/sha256.min.js"></script>
+        <script src="https://neo-cdn.azureedge.net/js/consensus.min.js?v=4204FBEAA5733BC0F6394177665B4FA93C50BB5268DFBEF01558D5B2621EFAA0"></script>
+    
+    <script src="/js/getseed.js?v=jIw63FyIv1mvXIecfCP5ev6jhciEhmWB9kZ6IGPP1yk"></script>
+    <script src="https://neo-cdn.azureedge.net/lib/bootstrap-fileinput/js/fileinput.min.js"></script>
+    <script src="https://neo-cdn.azureedge.net/lib/bootstrap-fileinput/js/locales/zh.js"></script>
+    <script>
+        $("#logo").fileinput({
+            language: 'en',
+            showUpload: false,
+            allowedFileExtensions: ['jpg', 'png', 'gif'],
+        });
+        function hashInfo() {
+            var msg = "candidate" + $("#Email").val() + $("#Website").val() + $("#SocialAccount").val() + $("#Summary").val();
+            $("#hash").val(sha256(msg));
+        }
+        var block_s = 'Block Size';
+        var tx_v = 'Tx Volume';
+        var error = '';
+        if (error.length > 0) {
+            $('#exampleModal').modal();
+        }
+        $("#menu_list a").css("border-bottom", "none")
+        $("#menu_list li.nav-item [href='/consensus']").css("border-bottom", "2px solid #58bf00")
+    </script>
+
+</body>
+</html>
